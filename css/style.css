@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: SN Pro, sans-serif;
+}
+body{
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(100, 149, 237, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(80, 100, 255, 0.08),
+      transparent 25%
+    ),
+    rgb(24, 24, 27);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  margin-top: 10px;
+  border-radius: 50px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Espaça o menu de um lado e o botão do outro */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px; /* Dá o espaçamento interno necessário */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+li {
+  margin: 0;
+  list-style: none;
+}
+#botão-mobile{
+  display: none;
+}
+a{
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+a:hover{
+  color: cornflowerblue;
+  transition: color 0.3s ease-in;
+}
+h1{
+  font-family: "Syne", sans-serif;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  color: transparent;
+  border-block: 10px;
+  border-block-color: white;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px white;
+  font-size: 100px;
+  transition: color 0.3s ease-in-out, -webkit-text-stroke 0.3s ease-in, padding 0.3s ease-in-out;
+}
+h2{
+  font-family: "Syne", sans-serif;
+  display: flex;
+  margin-top: -20px;
+  color: transparent;
+  border-block: 10px;
+  border-block-color: white;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px white;
+  font-size: 75px;
+  transition: color 0.5s ease-in-out, -webkit-text-stroke 0.5s ease-in, padding 0.5s ease-in-out;
+}
+h1 span, h2 span {
+  font-family: "Syne", sans-serif;
+  display: inline-block;
+  transition: transform 0.6s ease-in-out, padding 0.6s ease-in-out  ;
+}
+h1:hover, h2:hover{
+  padding-left: 10px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
+  color: cornflowerblue;
+}
+
+h1:hover span.mover, h2:hover span.mover {
+  padding-left: 15px;
+}
+h1:hover span.expandir, h2:hover span.expandir {
+  padding-left: 15px;
+  transform: scaleX(1.5);
+}
+.redes{
+  margin-bottom: 20px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-rede{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 25px;
+}
+@media (max-width: 1100px) {
+  #botão-mobile{
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+  }
+  nav ul {
+  display: none;
+  }
+  nav{
+    margin-right: 10px;
+    border-radius: 15px;
+    width: 0%;
+    justify-content: center;
+  }
+
+  li {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 36px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  /* Ajustes dos efeitos de movimento no hover do celular */
+  h1:hover span.expandir, h2:hover span.expandir {
+    padding-left: 0px;
+    transform: scaleX(1);
+  }
+
+  h1:hover span.mover, h2:hover span.mover {
+    padding-left: 0px;
+  }
+
+  .card-rede {
+    margin-inline: 0;
+  }
+}
+
+

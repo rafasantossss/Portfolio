@@ -270,6 +270,7 @@ main {
   text-align: left;
   margin: 0 0 18px;
   color: cornflowerblue;
+  font-family: "Syne", sans-serif;
   font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 800;
   line-height: 0.95;
@@ -279,8 +280,13 @@ main {
   transition: color 0.35s ease, transform 0.35s ease;
 }
 
-.hero h1 span {
+.hero-title-name,
+.hero-title-label {
   display: block;
+  font-family: "Syne", sans-serif;
+}
+
+.hero-title-label {
   margin-left: clamp(0.8rem, 3vw, 2rem);
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
@@ -288,7 +294,7 @@ main {
     transform 0.35s ease;
 }
 
-.hero h1 span:hover {
+.hero-title-label:hover {
   color: cornflowerblue;
   -webkit-text-stroke: 1.5px cornflowerblue;
   transform: translateX(8px);
@@ -560,7 +566,7 @@ h2 {
     overflow-wrap: anywhere;
   }
 
-  .hero h1 span {
+  .hero-title-label {
     margin-left: 0.75rem;
   }
 
@@ -609,7 +615,7 @@ h2 {
 }
 
 @media (hover: none) {
-  .hero h1 span:hover {
+  .hero-title-label:hover {
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
     transform: none;

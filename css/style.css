@@ -81,13 +81,15 @@ h1{
   -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0);
   font-size: 100px;
   transition: color 0.3s ease-in-out, -webkit-text-stroke 0.3s ease-in, padding 0.3s ease-in-out,margin-top 0.5s ease-in-out, margin-bottom 0.5s ease-in-out ;
+  white-space: nowrap;
 }
 h2{
+  padding-left: 100px;
   justify-content: left;
   text-align: left;
   margin-bottom: 20px;
   font-family: "Syne", sans-serif;
-  display: flex;
+  display: block;
   margin-top: -20px;
   color: transparent;
   border-block: 10px;
@@ -96,6 +98,7 @@ h2{
   -webkit-text-stroke: 1px white;
   font-size: 75px;
   transition: color 0.5s ease-in-out, -webkit-text-stroke 0.5s ease-in, padding 0.5s ease-in-out;
+  white-space: nowrap;
 }
 .sobreMim{
   margin-top: -20px;
@@ -120,6 +123,41 @@ p{
 p:hover{
   color: grey;
 }
+.projetos{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin: 0 5% 40px;
+}
+.projeto{
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.projeto h3{
+  margin-bottom: 8px;
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-size: 1.2rem;
+}
+.projeto p{
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "SN Pro", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.projeto a{
+  display: inline-block;
+  margin-top: 15px;
+  color: cornflowerblue;
+  font-size: 0.9rem;
+}
+.projeto:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(100, 149, 237, 0.35);
+}
 .FotoPerfil{
   border: 3px solid white;
   object-fit: cover;
@@ -136,16 +174,14 @@ h1 span, h2 span {
   transition: transform 0.6s ease-in-out, padding 0.6s ease-in-out  ;
 }
 h1:hover{
-  margin-top: 20px;
-  margin-bottom: 40px;
   -webkit-text-stroke: 1.5px white;
   color: transparent;
 }
 
 h2:hover{
-  padding-left: 10px;
   -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0);
   color: cornflowerblue;
+  transform: translateX(8px);
 }
 
 h2:hover span.mover {
@@ -174,6 +210,246 @@ h2:hover span.expandir {
 .card-info:hover p {
   color: white;
 }
+
+/* Refined layout and hierarchy */
+body {
+  color: #fff;
+  overflow-x: hidden;
+}
+
+main {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 0 28px 24px;
+}
+
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding: 72px 7% 56px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: 8%;
+  top: 18%;
+  border: 1px solid rgba(100, 149, 237, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 0 0 26px rgba(100, 149, 237, 0.04), 0 0 0 52px rgba(100, 149, 237, 0.025);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: cornflowerblue;
+  font-family: "SN Pro", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.hero h1 {
+  justify-content: flex-start;
+  text-align: left;
+  margin: 0 0 0px;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 590px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "SN Pro", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  margin: 0 0 28px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid cornflowerblue;
+  border-radius: 999px;
+  padding: 12px 20px;
+  color: #fff;
+  background: rgba(100, 149, 237, 0.16);
+  font-weight: 700;
+}
+
+.cta:hover {
+  color: #fff;
+  background: cornflowerblue;
+}
+
+h2 {
+  margin: 76px 4% 28px;
+  padding-left: 0;
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  line-height: 1;
+  display: block;
+  transition: color 0.35s ease, -webkit-text-stroke 0.35s ease, transform 0.35s ease;
+}
+
+.hero + h2 {
+  margin-top: -120px;
+}
+
+.sobreMim {
+  margin: 0 7% 58px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.sobreMim p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.projetos {
+  margin: 0 4% 58px;
+  gap: 18px;
+}
+
+.projeto {
+  min-height: 215px;
+  padding: 22px;
+  border-color: rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+}
+
+.projeto p {
+  min-height: 72px;
+}
+
+.tecnologia {
+  display: inline-block;
+  color: cornflowerblue;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.formacao,
+.experiencia {
+  display: grid;
+  gap: 14px;
+  margin: 0 7% 58px;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 7% 58px;
+}
+
+.cursos span {
+  padding: 10px 14px;
+  border: 1px solid rgba(100, 149, 237, 0.42);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(100, 149, 237, 0.08);
+  font-size: 0.92rem;
+}
+
+.timeline-item {
+  padding: 20px 24px;
+  border-left: 3px solid cornflowerblue;
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-item h3 {
+  margin: 4px 0;
+  font-family: "Syne", sans-serif;
+  font-size: 1.1rem;
+}
+
+.timeline-item p {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "SN Pro", sans-serif;
+  font-size: 1rem;
+}
+
+.timeline-date {
+  color: cornflowerblue;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-description {
+  margin-top: 10px;
+}
+
+.redes {
+  gap: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.card-rede {
+  margin-inline: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.card-rede:hover {
+  background: rgba(100, 149, 237, 0.12);
+}
+
+@media (max-width: 1100px) {
+  main {
+    padding-inline: 16px;
+  }
+
+  .hero {
+    min-height: 65vh;
+    padding: 58px 4% 42px;
+  }
+
+  .hero::after {
+    right: -80px;
+    top: 16%;
+    opacity: 0.5;
+  }
+
+  .sobreMim {
+    margin-inline: 4%;
+  }
+
+  .sobreMim p {
+    font-size: 1rem;
+  }
+
+  .formacao,
+  .experiencia {
+    margin-inline: 4%;
+  }
+
+  .cursos {
+    margin-inline: 4%;
+  }
+}
 @media (max-width: 1100px) {
   .sobreMim {
     display: block;
@@ -195,6 +471,10 @@ h2:hover span.expandir {
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 15px;
+  }
+  .projetos{
+    grid-template-columns: 1fr;
+    margin-inline: 8%;
   }
   nav ul {
   display: none;
@@ -241,4 +521,55 @@ h2:hover span.expandir {
   }
 }
 
+/* Keep content aligned after the mobile typography rules above. */
+@media (max-width: 1100px) {
+  .hero {
+    display: flex;
+    align-items: center;
+  }
 
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero .eyebrow,
+  .hero .intro {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .hero h1 {
+    justify-content: flex-start;
+    text-align: left;
+    margin: 0 0 18px;
+    font-size: clamp(2.7rem, 12vw, 4.5rem);
+  }
+
+  h2 {
+    margin: 58px 4% 22px;
+    white-space: normal;
+    text-align: left;
+    justify-content: initial;
+  }
+
+  .hero + h2 {
+    margin-top: 18px;
+  }
+
+  .sobreMim p,
+  .projeto p,
+  .timeline-item p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .sobreMim {
+    padding: 22px;
+  }
+
+  .redes {
+    flex-wrap: wrap;
+  }
+}
